@@ -1,9 +1,7 @@
 # pom.xml
 ```xml
-<dependency>
-  <groupId>org.springframework.boot</groupId>
-  <artifactId>spring-boot-starter-web</artifactId>
-</dependency>
+<groupId>io.daocloud</groupId>
+<artifactId>miracle</artifactId>
 ...
 <distributionManagement>
   <repository>
@@ -35,7 +33,7 @@
 
 # 构建
 ```bash
-mvn --setting settings.xml deploy
+mvn --settings settings.xml deploy
 ```
 
 # 访问页面
