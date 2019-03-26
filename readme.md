@@ -33,6 +33,11 @@
     <url>http://172.16.111.31:30081/repository/maven-releases/</url>
 ```
 
+# 构建
+```bash
+mvn --setting settings.xml deploy
+```
+
 # 访问页面
 
 启动后访问 localhost:8080 即可

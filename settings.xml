@@ -5,7 +5,7 @@
 
     <servers>
         <server>
-            <id>dcs-maven</id>
+            <id>nexus-maven</id>
             <username>admin</username>
             <password>admin123</password>
         </server>
