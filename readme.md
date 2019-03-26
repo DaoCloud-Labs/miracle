@@ -38,21 +38,20 @@ mvn --settings settings.xml deploy
 
 # 访问页面
 
-启动后访问 localhost:8080 即可
+启动后访问 {ip}:8080/index
 
 # 切换页面
 
 将 MainController 下的如下代码
 
 ```java
-  @RequestMapping("/")
-  public String one(){
-    return "index_a.html";
-  }
-
-  @RequestMapping("/another")
-  public String two(){
-    return "index_b.html";
+  @GetMapping(value = "/index", produces = MediaType.IMAGE_JPEG_VALUE)
+  @ResponseBody
+  public String indexA() throws IOException {
+    Resource cpr = new ClassPathResource("static/indexA.jpg");
+    //for test
+    BASE64Encoder encoder = new BASE64Encoder();
+    return encoder.encode(FileCopyUtils.copyToByteArray(cpr.getInputStream()));
   }
 ```
 
@@ -60,15 +59,13 @@ mvn --settings settings.xml deploy
 
 ```java
 
-  @RequestMapping("/another")
-  public String one(){
-    return "index_a.html";
-  }
-
-  @RequestMapping("/")
-  public String two(){
-    return "index_b.html";
+  @GetMapping(value = "/index", produces = MediaType.IMAGE_JPEG_VALUE)
+  @ResponseBody
+  public String indexA() throws IOException {
+    Resource cpr = new ClassPathResource("static/indexB.jpg");
+    //for test
+    BASE64Encoder encoder = new BASE64Encoder();
+    return encoder.encode(FileCopyUtils.copyToByteArray(cpr.getInputStream()));
   }
 
 ```
-即可
