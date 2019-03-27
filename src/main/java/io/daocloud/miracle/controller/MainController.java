@@ -1,6 +1,7 @@
 package io.daocloud.miracle.controller;
 
 import java.io.IOException;
+import org.apache.tomcat.util.codec.binary.Base64;
 import org.springframework.core.io.ClassPathResource;
 import org.springframework.core.io.Resource;
 import org.springframework.http.MediaType;
@@ -18,8 +19,11 @@ public class MainController {
   public String indexA() throws IOException {
     Resource cpr = new ClassPathResource("static/indexA.jpg");
     //for test
-    BASE64Encoder encoder = new BASE64Encoder();
-    return encoder.encode(FileCopyUtils.copyToByteArray(cpr.getInputStream()));
+    return Base64.encodeBase64String(FileCopyUtils.copyToByteArray(cpr.getInputStream()));
+  }
+
+  public String yahaha(){
+    return "yahaha";
   }
 //
 //  @GetMapping(value = "/indexB", produces = MediaType.IMAGE_JPEG_VALUE)
