@@ -56,7 +56,7 @@ public class MiracleApplicationTests {
 
   @Test
   public void testYahaha(){
-    Assert.assertEquals("yahaha",MainController.yahaha());
+    Assert.assertEquals("success",MainController.yahaha());
   }
 
   @Test

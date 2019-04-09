@@ -20,9 +20,9 @@ public class MainController {
     //for test
     return Base64.encodeBase64String(FileCopyUtils.copyToByteArray(cpr.getInputStream()));
   }
-
+  @GetMapping(value = "/health")
   public String yahaha(){
-    return "yahaha";
+    return "success";
   }
 //
 //  @GetMapping(value = "/indexB", produces = MediaType.IMAGE_JPEG_VALUE)
