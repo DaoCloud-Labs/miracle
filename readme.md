@@ -69,3 +69,7 @@ mvn --settings settings.xml deploy
   }
 
 ```
+
+# 健康检测
+
+启动后访问 {ip}:8080/health返回success的字符串说明启动成功
