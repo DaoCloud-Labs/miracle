@@ -3,7 +3,6 @@
 ## 如何构建 Docker 镜像
 > 推荐容器化部署，直接构建 Docker 镜像
 ```bash
-mvn package
 docker build .
 ```
 
@@ -49,8 +48,8 @@ mvn --settings settings.xml deploy
 ```
 
 ## 如何部署
-#### 1. 通过 DCS 部署应用实例
-用 dcs-deploy 中的 miracle-deploy.yaml 通过 DCS 部署 miracle 和 miracle-frontend
+#### 1. 通过 DCS 部署应用实例到 DCE
+用部署类项目中的 YAML 文件通过 DCS 部署 miracle 和 miracle-frontend。若不会编写部署 YAML 文件，可以利用 DCS 部署时在线生成 YAML 模板的功能。
 #### 2. 健康检查
 ```bash
 curl ${IP}:8080/health # 返回success的字符串说明启动成功
