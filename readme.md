@@ -3,8 +3,14 @@
 ## 如何构建 Docker 镜像
 > 推荐容器化部署，直接构建 Docker 镜像
 ```bash
-docker build .
+docker build -f MultistageDockerfile -t miracle-service:latest .
 ```
+> 若提示 ```is not a valid repository/tag: invalid reference format``` 则说明主机的 docker 版本过低，可以选择升级，也可以不采用多阶段构建，但需要有 maven 的支持:
+```bash
+mvn package
+docker build -t miracle-service:latest .
+```
+
 
 ## 如何用 mvn 打包并推送到私有 Nexus
 > 若不选择容器化部署，只是想推送到私有 maven 仓库，直接使用 jar，可以参考以下步骤
