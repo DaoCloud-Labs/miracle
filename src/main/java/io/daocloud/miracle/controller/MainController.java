@@ -16,7 +16,7 @@ public class MainController {
   @GetMapping(value = "/index", produces = MediaType.IMAGE_JPEG_VALUE)
   @ResponseBody
   public String indexA() throws IOException {
-    Resource cpr = new ClassPathResource("static/indexA.jpg");
+    Resource cpr = new ClassPathResource("static/indexA.jpg");//Propaganda
     //for test
     return Base64.encodeBase64String(FileCopyUtils.copyToByteArray(cpr.getInputStream()));
   }
