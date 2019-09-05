@@ -83,18 +83,20 @@
       </build>
     </profile>
   </profiles>
-
-  <repository>
-      <id>public</id>
-      <url>https://maven.aliyun.com/repository/public</url>
-      <releases>
-          <enabled>true</enabled>
-      </releases>
-      <snapshots>
-          <enabled>true</enabled>
-      </snapshots>
-  </repository>
-
+  
+  <repositories>
+    <repository>
+        <id>public</id>
+        <url>https://maven.aliyun.com/repository/public</url>
+        <releases>
+            <enabled>true</enabled>
+        </releases>
+        <snapshots>
+            <enabled>true</enabled>
+        </snapshots>
+    </repository>
+  </repositories>
+  
   <distributionManagement>
     <repository>
       <id>nexus-maven</id>
